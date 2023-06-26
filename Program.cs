@@ -1,10 +1,38 @@
-﻿namespace CS
+﻿using System;
+using System.Linq;
+
+class Program
 {
-    internal class Program
+    static void Main()
     {
-        static void Main(string[] args)
+        int[] originalArray = { 1, 2, 6, -1, 88, 7, 6 };
+        int[] filterArray = { 6, 88, 7 };
+
+        int[] filteredArray = FilterArray(originalArray, filterArray);
+
+        Console.WriteLine("Оригінальний масив:");
+        PrintArray(originalArray);
+
+        Console.WriteLine("Масив для фільтрації:");
+        PrintArray(filterArray);
+
+        Console.WriteLine("Результат роботи методу:");
+        PrintArray(filteredArray);
+
+        Console.ReadLine();
+    }
+
+    static int[] FilterArray(int[] originalArray, int[] filterArray)
+    {
+        return originalArray.Except(filterArray).ToArray();
+    }
+
+    static void PrintArray(int[] array)
+    {
+        foreach (int element in array)
         {
-            Console.WriteLine("Hello, World!");
+            Console.Write(element + " ");
         }
+        Console.WriteLine();
     }
 }
