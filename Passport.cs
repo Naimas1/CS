@@ -13,7 +13,8 @@ namespace CS
 
         public Passport() 
         { 
-
+            Date = string.Empty;
+            Name = string.Empty;
         }
         public Passport(string date, string name)
         {
@@ -22,7 +23,7 @@ namespace CS
         }
         public override string ToString()
         {
-            return $"";
+            return $"Name: {Name}\nDate: {Date}";
         }
     }
     public class ForeignPassport : Passport
